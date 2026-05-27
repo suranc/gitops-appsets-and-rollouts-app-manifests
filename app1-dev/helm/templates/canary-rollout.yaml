@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: canary
 spec:
-  replicas: 5
+  replicas: 2
   revisionHistoryLimit: 1
   selector:
     matchLabels:
@@ -29,11 +29,5 @@ spec:
     canary:
       canaryService: canary-preview
       steps:
-      - setWeight: 20
-      - pause: {}
-      - setWeight: 40
-      - pause: {}
-      - setWeight: 60
-      - pause: {}
-      - setWeight: 80
+      - setWeight: 50
       - pause: {}
